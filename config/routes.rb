@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :web do
-    resources :users, only: [:show, :new, :create]
+    resources :posts, only: :show
+    resources :users, only: [:show, :new, :create] do
+      resources :posts, only: [:new, :create], controller: 'users/posts'
+    end
   end
 
   root 'welcome#index'
