@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :web do
+    resources :users, only: [:show, :new, :create]
+  end
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
