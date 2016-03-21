@@ -33,7 +33,7 @@
             %ul.nav.navbar-nav
               -if signed_in?
                 %li
-                  =link_to user_posts_path(current_user) do
+                  =link_to user_path(current_user) do
                     = current_user.email
                 %li
                   =link_to t('.logout'), session_path, method: :delete

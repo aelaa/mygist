@@ -10,8 +10,8 @@ class Web::UsersController < Web::ApplicationController
   def create
     form = UserForm.new(User.new)
     if form.validate params[:user]
-      user = form.save
-      sign_in user
+      form.save
+      sign_in form.model
       redirect_to :root
     else
       redirect_to :new_user

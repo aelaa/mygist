@@ -1,8 +1,8 @@
-class PostForm < Reform::Form
+class CommentForm < Reform::Form
   property :text
-  property :name
   property :user
+  property :post
   validates :text, presence: true
-  validates :name, presence: true
   validates :user, presence: true
+  validates :post, presence: true
 end

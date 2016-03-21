@@ -5,7 +5,9 @@ class Web::PostsController < Web::ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = @post.user
+    @author = @post.user
+    @comments = @post.comments
+    @new_comment = CommentForm.new(Comment.new)
   end
 end
 

@@ -1,2 +1,5 @@
-%h1 Web::Users#new
-%p Find me in app/views/web/users/new.html.haml
+%h2 Registration
+= simple_form_for @user do |f|
+  = f.input :email
+  = f.input :password
+  = f.submit :sign, class: 'btn btn-default'

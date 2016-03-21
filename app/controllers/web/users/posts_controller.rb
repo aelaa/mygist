@@ -10,8 +10,8 @@ class Web::Users::PostsController < Web::Users::ApplicationController
 
   def create
     form = PostForm.new(Post.new)
+    form.user = current_user
     if form.validate params[:post]
-      form.user = current_user
       form.save
       redirect_to post_path(id: form.model.id)
     else
