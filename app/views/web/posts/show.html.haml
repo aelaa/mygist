@@ -1,2 +1,7 @@
-= @post
-= @user
+%h2
+  = @post.name
+
+%pre= @post.text
+
+by
+= link_to @post.user.email, @post.user

@@ -1,0 +1,14 @@
+%p
+  %h3 Last posts:
+  %ol
+  - @posts.each do |post|
+    %li
+      = link_to post.name, post
+      by
+      = link_to post.user.email, post.user
+      -# = post.comments.count
+%p
+  -if signed_in?
+    = link_to t('.write'), new_user_post_path(user_id: current_user.id), class: 'btn btn-default'
+  -else
+    = link_to t('.login'), new_session_path, class: 'btn btn-default'

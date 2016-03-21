@@ -1,2 +1,9 @@
-%h1 Web::Users#show
-%p Find me in app/views/web/users/show.html.haml
+%h1= @user.email
+%h3 User's posts:
+%ul
+  - @user.posts.each do |post|
+    %li
+      = link_to post.name, post
+      \:
+      -# = post.comments.count
+      comments

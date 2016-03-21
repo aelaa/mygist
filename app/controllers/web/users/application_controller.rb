@@ -1,5 +1,5 @@
-class Web::Users::ApplicationController < ActionController::Base
+class Web::Users::ApplicationController < Web::ApplicationController
   before_filter do
-    signed_in?
+    redirect_to new_session_path unless signed_in?
   end
 end
